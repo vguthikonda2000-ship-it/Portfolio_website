@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Template</title>
+    <meta
+      name="description"
+      content="A one-page portfolio template inspired by Steven Feng's site."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="background-wallpaper" aria-hidden="true">
+      <div class="wallpaper-row">
+        <span class="wallpaper-icon icon-a"></span>
+        <span class="wallpaper-icon icon-b"></span>
+        <span class="wallpaper-icon icon-c"></span>
+      </div>
+      <div class="wallpaper-row">
+        <span class="wallpaper-icon icon-d"></span>
+        <span class="wallpaper-icon icon-e"></span>
+        <span class="wallpaper-icon icon-f"></span>
+      </div>
+      <div class="wallpaper-row">
+        <span class="wallpaper-icon icon-g"></span>
+        <span class="wallpaper-icon icon-h"></span>
+        <span class="wallpaper-icon icon-i"></span>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="resume-link" id="resume-link" href="#contact">Resume</a>
+        <nav class="main-nav" aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+          <button class="lang-pill active" type="button">EN</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section hero-section" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" id="hero-eyebrow">Hi, I am Your Name</p>
+            <h1>
+              <span id="hero-title-prefix">I am a</span>
+              <span class="type-line">
+                <span id="type-target"></span><span class="cursor">_</span>
+              </span>
+            </h1>
+            <p class="lede" id="hero-description">
+              I design and build thoughtful digital experiences.
+            </p>
+            <a class="primary-cta" id="hero-cta" href="#contact">Connect With Me!</a>
+          </div>
+          <div class="hero-panel">
+            <div class="portrait-card">
+              <div class="portrait-glow"></div>
+              <div class="portrait-badge" id="hero-badge">
+                Open to freelance and full-time roles
+              </div>
+              <div class="portrait-art" id="hero-portrait">
+                <span class="portrait-ring"></span>
+                <span class="portrait-core" id="hero-initials">YN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container about-grid">
+          <div class="section-heading">
+            <h2 id="about-heading">About</h2>
+          </div>
+          <div class="about-copy" id="about-paragraphs"></div>
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <div class="container">
+          <div class="section-heading">
+            <h2 id="education-heading">Education</h2>
+          </div>
+          <div class="card-grid three-up" id="education-cards"></div>
+        </div>
+      </section>
+
+      <section class="section" id="publications">
+        <div class="container">
+          <div class="section-heading">
+            <h2 id="publications-heading">Publications</h2>
+          </div>
+          <div class="list-stack publication-stack" id="publication-cards"></div>
+        </div>
+      </section>
+
+      <section class="section" id="internships">
+        <div class="container">
+          <div class="section-heading">
+            <h2 id="experience-heading">Experience</h2>
+          </div>
+          <div class="card-grid two-up" id="experience-cards"></div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-heading">
+            <h2 id="projects-heading">Projects</h2>
+          </div>
+          <div class="card-grid three-up" id="project-slides"></div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-heading">
+            <h2 id="skills-heading">Skills</h2>
+          </div>
+          <div class="skills-grid" id="skills-grid"></div>
+        </div>
+      </section>
+
+      <section class="section footer-section" id="contact">
+        <div class="container footer-container">
+          <h2 id="contact-heading">Contact</h2>
+          <h3 id="contact-subheading">Let's build something thoughtful.</h3>
+          <a class="email-link" id="contact-email" href="mailto:hello@example.com">
+            hello@example.com
+          </a>
+          <div class="social-icons" id="social-links"></div>
+          <p class="footer-note">
+            <span id="footer-prefix">Made by</span>
+            <a href="#home" id="footer-name">Your Name</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./content/default-content.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

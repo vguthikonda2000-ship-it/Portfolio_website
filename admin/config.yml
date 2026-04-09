@@ -1,0 +1,181 @@
+backend:
+  name: github
+  repo: your-github-username/your-repo-name
+  branch: main
+
+local_backend: true
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - name: "content"
+        label: "Portfolio Content"
+        file: "content/site.json"
+        format: "json"
+        editor:
+          preview: false
+        fields:
+          - label: "Site"
+            name: "site"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Navigation"
+            name: "navigation"
+            widget: "object"
+            fields:
+              - label: "Resume Link"
+                name: "resume"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title Prefix", name: "titlePrefix", widget: "string" }
+              - label: "Animated Roles"
+                name: "roles"
+                widget: "list"
+                field: { label: "Role", name: "role", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Badge", name: "badge", widget: "string" }
+              - { label: "Portrait Image", name: "portraitImage", widget: "image", required: false }
+              - { label: "Portrait Image Alt", name: "portraitAlt", widget: "string", required: false }
+              - { label: "Initials Fallback", name: "initials", widget: "string" }
+              - label: "CTA"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: "Featured Work"
+            name: "featuredWork"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Timeline", name: "timeline", widget: "string" }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - label: "Slides"
+                name: "slides"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Video URL", name: "video", widget: "string", required: false }
+                  - { label: "Alt Text", name: "alt", widget: "string", required: false }
+          - label: "Education"
+            name: "education"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Cards"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Link Text", name: "linkText", widget: "string" }
+                  - { label: "Link URL", name: "linkUrl", widget: "string" }
+          - label: "Publications"
+            name: "publications"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Source", name: "source", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Year", name: "year", widget: "string" }
+                  - label: "Buttons"
+                    name: "links"
+                    widget: "list"
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" }
+                      - { label: "URL", name: "url", widget: "string" }
+                  - { label: "Link Text", name: "linkText", widget: "string" }
+                  - { label: "Link URL", name: "linkUrl", widget: "string" }
+          - label: "Experience"
+            name: "experience"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Cards"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Link Text", name: "linkText", widget: "string" }
+                  - { label: "Link URL", name: "linkUrl", widget: "string" }
+          - label: "Projects"
+            name: "projects"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Subtitle", name: "subtitle", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+                  - { label: "Video URL", name: "video", widget: "string", required: false }
+                  - { label: "Alt Text", name: "alt", widget: "string", required: false }
+                  - label: "Buttons"
+                    name: "links"
+                    widget: "list"
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" }
+                      - { label: "URL", name: "url", widget: "string" }
+          - label: "Skills"
+            name: "skills"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Icon", name: "icon", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subheading", name: "subheading", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - label: "Social Links"
+                name: "socials"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Prefix", name: "prefix", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
