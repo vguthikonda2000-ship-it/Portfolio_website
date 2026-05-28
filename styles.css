@@ -102,6 +102,18 @@ button {
   align-items: center;
 }
 
+.about-grid {
+  grid-template-columns: minmax(220px, min(var(--about-image-width, 420px), 64vw)) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.25rem);
+  align-items: start;
+}
+
+.about-grid .section-heading {
+  display: grid;
+  align-content: start;
+  gap: 1.25rem;
+}
+
 .eyebrow {
   margin: 0 0 0.75rem;
   font-size: 1.4rem;
@@ -268,6 +280,39 @@ button {
   font-size: clamp(2rem, 4vw, 3rem);
 }
 
+.about-image-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.about-image-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  background: transparent;
+}
+
+.about-copy {
+  align-self: start;
+  padding-top: calc(clamp(2rem, 4vw, 3rem) + 1.5rem + var(--about-copy-offset, 0px));
+}
+
+.about-copy p {
+  max-width: 58rem;
+  margin: 0;
+}
+
+.about-copy p + p {
+  margin-top: 1rem;
+}
+
 .feature-topline,
 .publication-source {
   display: inline-block;
@@ -311,6 +356,74 @@ button {
   font-size: 1.55rem;
 }
 
+.edu-card {
+  border-top: 4px solid var(--edu-accent, #002868);
+}
+
+.edu-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.edu-title-row h3 {
+  margin: 0;
+  flex: 1;
+}
+
+.edu-logo {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.edu-degree {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0 0 0.5rem;
+}
+
+.edu-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0 0 0.25rem;
+}
+
+
+.publication-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0 0 0.8rem;
+}
+
+.publication-authors {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.publication-author-note {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(19, 99, 223, 0.18);
+  background: rgba(19, 99, 223, 0.08);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
 .card-grid,
 .skills-grid {
   display: grid;
@@ -338,8 +451,8 @@ button {
 
 .project-card .content-media,
 .project-card .project-video {
-  min-height: 320px;
-  aspect-ratio: 1 / 1;
+  min-height: 220px;
+  aspect-ratio: 4 / 3;
   height: auto;
 }
 
@@ -578,6 +691,14 @@ button {
     padding-top: 4rem;
   }
 
+  .about-image-frame {
+    width: min(100%, var(--about-image-width, 420px));
+  }
+
+  .about-copy {
+    padding-top: 0;
+  }
+
   .publication-card {
     grid-template-columns: 1fr;
   }
@@ -591,9 +712,20 @@ button {
 
 @media (max-width: 640px) {
   .nav-shell {
-    padding: 0.75rem 0;
-    align-items: flex-start;
-    flex-direction: column;
+    padding: 0.5rem 0;
+    min-height: 56px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .resume-link,
+  .main-nav a,
+  .lang-pill {
+    font-size: 0.82rem;
+  }
+
+  .main-nav {
+    gap: 0.5rem;
   }
 
   .content-media {
@@ -601,6 +733,42 @@ button {
   }
 
   .section {
-    padding: 4rem 0;
+    padding: 3rem 0;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .portrait-card {
+    min-height: 320px;
+  }
+
+  .portrait-art {
+    min-height: 220px;
+  }
+
+  .portrait-ring {
+    width: 220px;
+    height: 220px;
+  }
+
+  .portrait-core {
+    width: 130px;
+    height: 130px;
+    font-size: 3rem;
+  }
+
+  .publication-card {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-heading h2,
+  .footer-container h2 {
+    font-size: clamp(1.6rem, 6vw, 2rem);
   }
 }

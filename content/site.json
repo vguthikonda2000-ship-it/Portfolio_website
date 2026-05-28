@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Your Name Portfolio",
-    "description": "A one-page portfolio with editable content and media."
+    "title": "Vrithik Guthikonda Portfolio",
+    "description": "Portfolio for Vrithik Guthikonda, electrical engineering PhD candidate focused on robotics, controls, and deformable object manipulation."
   },
   "navigation": {
     "resume": {
@@ -13,54 +13,58 @@
     "eyebrow": "Hi, I am Vrithik Guthikonda",
     "titlePrefix": "I am a",
     "roles": [
-      "PhD student",
-      "Robotic engineer",
-      "Teaching Assistant",
-      "Research Assistant"
+      "Electrical engineering PhD candidate",
+      "Robotics researcher",
+      "Teaching assistant",
+      "Controls engineer"
     ],
-    "description": "I design and build thoughtful digital experiences, blending product strategy, engineering, and visual storytelling into polished web work.",
-    "badge": "Open to freelance and full-time roles",
+    "description": "I work on robotics, adaptive control, reinforcement learning, and computer vision, with a focus on deformable object manipulation and resilient autonomous systems.",
+    "badge": "Open to research, robotics, and control systems opportunities",
     "portraitImage": "",
-    "portraitAlt": "Portrait of Your Name",
-    "initials": "YN",
+    "portraitAlt": "Portrait of Vrithik Guthikonda",
+    "initials": "VG",
     "cta": {
-      "text": "Connect With Me!",
+      "text": "Get In Touch",
       "url": "#contact"
     }
   },
   "about": {
     "heading": "About",
+    "image": "",
+    "imageAlt": "About Vrithik Guthikonda",
+    "imageWidth": 420,
+    "textOffset": 0,
     "paragraphs": [
-      "This template mirrors the structure of the reference site while keeping your content separate from the design.",
-      "Update your biography, projects, images, and videos from the CMS instead of editing the HTML and CSS directly.",
-      "Once this is on GitHub, you can keep the look of the site stable while refreshing your wording and media whenever you need."
+      "I am a PhD candidate in Electrical Engineering at the University of Connecticut, where my research centers on robotics, nonlinear control, and learning-based manipulation of deformable objects.",
+      "My work combines adaptive control, barrier Lyapunov methods, reinforcement learning, computer vision, and robot experimentation to design safe and scalable controllers for challenging manipulation tasks.",
+      "Alongside research, I support undergraduate and graduate learning as a teaching assistant and have built robotics and vision systems in both academic labs and industry internships."
     ]
   },
   "featuredWork": {
     "heading": "Featured Work",
-    "timeline": "2023 to Present",
-    "summary": "Use this main feature block for your current company or most important portfolio story. It follows the same headline, carousel, and summary rhythm as the reference site.",
+    "timeline": "2022 to Present",
+    "summary": "My current research focuses on vision-based deformable object manipulation, constrained adaptive control, and reinforcement learning for robotic systems, validated in both simulation and real robot experiments.",
     "slides": [
       {
-        "title": "Flagship product redesign",
-        "description": "Rebuilt a legacy product experience into a modern, faster, more accessible customer journey with clearer hierarchy and stronger conversion.",
-        "image": "assets/uploads/featured-1.jpg",
+        "title": "Adaptive shape servoing for deformable objects",
+        "description": "Developed adaptive controllers that learn deformation models online for vision-based manipulation of deformable objects and validated them through simulation and physical robot experiments.",
+        "image": "",
         "video": "",
-        "alt": "Featured project visual"
+        "alt": "Adaptive deformable object manipulation research"
       },
       {
-        "title": "Design system expansion",
-        "description": "Created reusable design and engineering foundations to ship new pages consistently across a growing team.",
-        "image": "assets/uploads/featured-2.jpg",
+        "title": "Constrained control with barrier Lyapunov methods",
+        "description": "Designed constrained control frameworks using integral concurrent learning, barrier Lyapunov functions, and Fourier-series-based Jacobian approximation to enforce safe manipulation under nonlinear state constraints.",
+        "image": "",
         "video": "",
-        "alt": "Design system visual"
+        "alt": "Constrained control framework research"
       },
       {
-        "title": "Marketing site launch",
-        "description": "Shipped a polished, story-led launch experience with stronger branding, responsive behavior, and improved performance.",
-        "image": "assets/uploads/featured-3.jpg",
+        "title": "Learning-based robotic manipulation",
+        "description": "Implemented an adaptive actor-critic policy iteration algorithm with PCA-based dimensionality reduction to make deformable object learning more scalable for robotic manipulation tasks.",
+        "image": "",
         "video": "",
-        "alt": "Marketing site visual"
+        "alt": "Learning-based robotic manipulation"
       }
     ]
   },
@@ -68,22 +72,37 @@
     "heading": "Education",
     "items": [
       {
-        "title": "Your University",
-        "description": "Bachelor of Science / Design / Engineering",
-        "linkText": "Explore",
-        "linkUrl": "#contact"
+        "title": "University of Connecticut",
+        "degree": "PhD Candidate in Electrical Engineering",
+        "gpa": "GPA 3.633",
+        "dates": "January 2022 to Present",
+        "linkText": "Storrs, CT",
+        "linkUrl": "#contact",
+        "cardColor": "#002868",
+        "logo": "assets/uconn-logo.png",
+        "logoOnColor": true
       },
       {
-        "title": "Research Lab or Program",
-        "description": "Highlight a thesis, capstone, research position, or fellowship.",
-        "linkText": "Explore",
-        "linkUrl": "#contact"
+        "title": "University of Connecticut",
+        "degree": "Bachelor of Science in Electrical Engineering with a Minor in Mathematics",
+        "gpa": "GPA 3.822",
+        "dates": "January 2019 to December 2021",
+        "linkText": "Storrs, CT",
+        "linkUrl": "#contact",
+        "cardColor": "#002868",
+        "logo": "assets/uconn-logo.png",
+        "logoOnColor": true
       },
       {
-        "title": "Certificate or Continuing Education",
-        "description": "Show advanced coursework, online study, or in-progress learning.",
-        "linkText": "Explore",
-        "linkUrl": "#contact"
+        "title": "Fairfield University",
+        "degree": "Bachelor of Science in Electrical Engineering",
+        "gpa": "GPA 3.824",
+        "dates": "August 2017 to December 2019",
+        "linkText": "Fairfield, CT",
+        "linkUrl": "#contact",
+        "cardColor": "#8B0000",
+        "logo": "assets/fairfield-logo.png",
+        "logoOnColor": false
       }
     ]
   },
@@ -91,62 +110,68 @@
     "heading": "Publications",
     "items": [
       {
-        "source": "Journal / Conference",
-        "title": "Featured article, talk, white paper, or case study",
-        "image": "",
-        "year": "2026",
-        "links": [
-          {
-            "label": "Project",
-            "url": "#contact"
-          },
-          {
-            "label": "Code",
-            "url": "#contact"
-          },
-          {
-            "label": "Paper",
-            "url": "#contact"
-          }
-        ],
-        "linkText": "View Publication",
-        "linkUrl": "#contact"
-      },
-      {
-        "source": "Industry",
-        "title": "Another piece of writing or presentation worth showcasing",
-        "image": "",
-        "year": "2025",
-        "links": [
-          {
-            "label": "Project",
-            "url": "#contact"
-          },
-          {
-            "label": "Code",
-            "url": "#contact"
-          },
-          {
-            "label": "Paper",
-            "url": "#contact"
-          }
-        ],
-        "linkText": "View Publication",
-        "linkUrl": "#contact"
-      },
-      {
-        "source": "Personal",
-        "title": "Deep-dive blog post or side project breakdown",
+        "source": "IEEE/ASME Transactions on Mechatronics",
+        "title": "Shape Servoing of Deformable Objects Using Model Estimation and Barrier Lyapunov Function",
+        "authors": "",
+        "authorNote": "",
         "image": "",
         "year": "2024",
         "links": [
           {
             "label": "Project",
-            "url": "#contact"
+            "url": "#projects"
           },
           {
             "label": "Code",
-            "url": "#contact"
+            "url": "https://github.com/vguthikonda2000-ship-it"
+          },
+          {
+            "label": "Paper",
+            "url": "https://doi.org/10.1109/TMECH.2024.3382590"
+          }
+        ],
+        "linkText": "View Publication",
+        "linkUrl": "https://doi.org/10.1109/TMECH.2024.3382590"
+      },
+      {
+        "source": "IEEE Control Systems Letters",
+        "title": "Adaptive Trajectory Synchronization with Time-Delayed Information",
+        "authors": "",
+        "authorNote": "",
+        "image": "",
+        "year": "2023",
+        "links": [
+          {
+            "label": "Project",
+            "url": "#projects"
+          },
+          {
+            "label": "Code",
+            "url": "https://github.com/vguthikonda2000-ship-it"
+          },
+          {
+            "label": "Paper",
+            "url": "https://doi.org/10.1109/LCSYS.2023.3343591"
+          }
+        ],
+        "linkText": "View Publication",
+        "linkUrl": "https://doi.org/10.1109/LCSYS.2023.3343591"
+      },
+      {
+        "source": "IFAC World Congress",
+        "title": "Shape servoing of deformable objects using adaptive deformation model estimation",
+        "authors": "",
+        "authorNote": "",
+        "image": "",
+        "year": "2023",
+        "links": [
+          {
+            "label": "Project",
+            "url": "#projects"
+          },
+          {
+            "label": "Code",
+            "url": "https://github.com/vguthikonda2000-ship-it"
           },
           {
             "label": "Paper",
@@ -154,6 +179,54 @@
           }
         ],
         "linkText": "View Publication",
+        "linkUrl": "#contact"
+      },
+      {
+        "source": "IEEE Transactions on Control Systems Technology",
+        "title": "Constrained Actor-Critic Reinforcement Learning for Deformable Object Visual Shape Servoing",
+        "authors": "",
+        "authorNote": "",
+        "image": "",
+        "year": "2024",
+        "links": [
+          {
+            "label": "Project",
+            "url": "#projects"
+          },
+          {
+            "label": "Code",
+            "url": "https://github.com/vguthikonda2000-ship-it"
+          },
+          {
+            "label": "Paper",
+            "url": "#contact"
+          }
+        ],
+        "linkText": "Under Review",
+        "linkUrl": "#contact"
+      },
+      {
+        "source": "IEEE/RSJ IROS",
+        "title": "Constrained Dual Arm Shape Servoing of Deformable Objects using Integral Barrier Lyapunov Function",
+        "authors": "",
+        "authorNote": "",
+        "image": "",
+        "year": "2026",
+        "links": [
+          {
+            "label": "Project",
+            "url": "#projects"
+          },
+          {
+            "label": "Code",
+            "url": "https://github.com/vguthikonda2000-ship-it"
+          },
+          {
+            "label": "Paper",
+            "url": "#contact"
+          }
+        ],
+        "linkText": "Under Review",
         "linkUrl": "#contact"
       }
     ]
@@ -162,27 +235,27 @@
     "heading": "Experience",
     "items": [
       {
-        "title": "Company One",
-        "description": "Summarize what you built, improved, or learned in a sentence.",
-        "linkText": "Explore",
+        "title": "Research Assistant, University of Connecticut",
+        "description": "Developed adaptive and constrained controllers for vision-based manipulation of deformable objects, validated methods in simulation and robot experiments, and supervised undergraduate lab researchers.",
+        "linkText": "May 2022 to Present",
         "linkUrl": "#contact"
       },
       {
-        "title": "Company Two",
-        "description": "Show product, design, engineering, or operational impact here.",
-        "linkText": "Explore",
+        "title": "Teaching and Grading Assistant, University of Connecticut",
+        "description": "Led office hours, discussion sections, grading, and student support for courses in communication systems, robot control, circuits, systems analysis, signal and systems, and digital communications.",
+        "linkText": "Aug 2024 to Present",
         "linkUrl": "#contact"
       },
       {
-        "title": "Company Three",
-        "description": "Add another role, internship, client project, or studio engagement.",
-        "linkText": "Explore",
+        "title": "Graduate Student Technician, UConn and NASA REHI",
+        "description": "Programmed and integrated a UFactory Lite 6 robot, developed Intel RealSense pick-and-place routines, and built control responses for simulated habitat airlock breach scenarios.",
+        "linkText": "Summers 2022 to 2024",
         "linkUrl": "#contact"
       },
       {
-        "title": "Company Four",
-        "description": "Keep these concise so the layout stays close to the reference site.",
-        "linkText": "Explore",
+        "title": "Software Engineering Intern, MOVIA Robotics",
+        "description": "Built Unity and C# applications for posture detection, face tracking, gaze estimation, and robot-assisted interaction features for children with autism using MediaPipe and Kalman filtering.",
+        "linkText": "May 2021 to 2022",
         "linkUrl": "#contact"
       }
     ]
@@ -191,20 +264,20 @@
     "heading": "Projects",
     "items": [
       {
-        "title": "Signature Project",
-        "subtitle": "A short standout tagline",
-        "description": "Introduce the project, the stack you used, and the outcome in a compact paragraph just like the reference cards.",
-        "image": "assets/uploads/project-1.jpg",
+        "title": "Constrained Deformable Object Manipulation",
+        "subtitle": "Zeroing barrier function control",
+        "description": "Developed a closed-form constrained controller using a Lagrange multiplier approach and a Zeroing Barrier Function to avoid collisions during cloth manipulation, then validated the controller in NVIDIA Flex.",
+        "image": "",
         "video": "",
-        "alt": "Project visual",
+        "alt": "Constrained deformable object manipulation project",
         "links": [
           {
-            "label": "Read More",
+            "label": "Project",
             "url": "#contact"
           },
           {
             "label": "Code",
-            "url": "#contact"
+            "url": "https://github.com/vguthikonda2000-ship-it"
           },
           {
             "label": "Paper",
@@ -213,20 +286,20 @@
         ]
       },
       {
-        "title": "Team Project",
-        "subtitle": "Award or recognition",
-        "description": "This space works well for hackathons, student work, shipped tools, prototypes, or client work you want to feature.",
-        "image": "assets/uploads/project-2.jpg",
+        "title": "Two-Link Planar Robot Control",
+        "subtitle": "Feedback linearization, robust, and adaptive control",
+        "description": "Designed three controllers to track joint trajectories under disturbance and compared their stability guarantees through MATLAB simulations.",
+        "image": "",
         "video": "",
-        "alt": "Team project visual",
+        "alt": "Two-link planar robot control project",
         "links": [
           {
-            "label": "Read More",
+            "label": "Project",
             "url": "#contact"
           },
           {
             "label": "Code",
-            "url": "#contact"
+            "url": "https://github.com/vguthikonda2000-ship-it"
           },
           {
             "label": "Paper",
@@ -235,20 +308,86 @@
         ]
       },
       {
-        "title": "Creative Experiment",
-        "subtitle": "Exploration or personal challenge",
-        "description": "Add a more playful or technical side project here to break up the professional work with personality.",
-        "image": "assets/uploads/project-3.jpg",
+        "title": "Human Action Recognition Using 2D Skeletal Data",
+        "subtitle": "LSTM sequence modeling with MediaPipe",
+        "description": "Extracted pose data with MediaPipe Holistic, trained an LSTM model in TensorFlow Keras to classify indoor actions, and achieved 83 percent accuracy with TensorBoard-based evaluation.",
+        "image": "",
         "video": "",
-        "alt": "Creative project visual",
+        "alt": "Human action recognition project",
         "links": [
           {
-            "label": "Read More",
+            "label": "Project",
             "url": "#contact"
           },
           {
             "label": "Code",
+            "url": "https://github.com/vguthikonda2000-ship-it"
+          },
+          {
+            "label": "Paper",
             "url": "#contact"
+          }
+        ]
+      },
+      {
+        "title": "Hex-Nut Detection and Width Prediction",
+        "subtitle": "YOLO and MATLAB measurement pipeline",
+        "description": "Built a custom YOLO v3 object detector for hex nuts, used image processing to estimate widths in pixels, and converted those measurements to inches with a reference object for mobile execution.",
+        "image": "",
+        "video": "",
+        "alt": "Hex-nut detection and measurement project",
+        "links": [
+          {
+            "label": "Project",
+            "url": "#contact"
+          },
+          {
+            "label": "Code",
+            "url": "https://github.com/vguthikonda2000-ship-it"
+          },
+          {
+            "label": "Paper",
+            "url": "#contact"
+          }
+        ]
+      },
+      {
+        "title": "Object Detection and Tracking with TensorFlow Lite",
+        "subtitle": "Raspberry Pi and PID control",
+        "description": "Trained a custom SSD MobileNet V2 FPN-Lite detector, deployed it on a Raspberry Pi with TensorFlow Lite, and used a PID-controlled pan-tilt setup for active object tracking.",
+        "image": "",
+        "video": "",
+        "alt": "Object detection and tracking project",
+        "links": [
+          {
+            "label": "Project",
+            "url": "#contact"
+          },
+          {
+            "label": "Code",
+            "url": "https://github.com/vguthikonda2000-ship-it"
+          },
+          {
+            "label": "Paper",
+            "url": "#contact"
+          }
+        ]
+      },
+      {
+        "title": "SolidWorks Design and Prototyping",
+        "subtitle": "Certified mechanical design work",
+        "description": "Earned SolidWorks associate certification and designed 3D-printed prototypes including a child-friendly Mars Rover replica and a working board game.",
+        "image": "",
+        "video": "",
+        "alt": "SolidWorks design and prototyping project",
+        "links": [
+          {
+            "label": "Project",
+            "url": "#contact"
+          },
+          {
+            "label": "Code",
+            "url": "https://github.com/vguthikonda2000-ship-it"
           },
           {
             "label": "Paper",
@@ -262,52 +401,48 @@
     "heading": "Skills",
     "items": [
       {
-        "icon": "{ }",
-        "label": "HTML, CSS, JavaScript"
+        "icon": "PY",
+        "label": "Python, C++, C#, MATLAB, ROS, RAPID"
       },
       {
-        "icon": "</>",
-        "label": "React, Next.js, Gatsby"
+        "icon": "CV",
+        "label": "OpenCV, Azure Vision, Intel RealSense, MediaPipe"
       },
       {
-        "icon": "UX",
-        "label": "UX strategy, wireframes, prototypes"
+        "icon": "ML",
+        "label": "TensorFlow, TensorFlow Lite, LSTM models, reinforcement learning"
       },
       {
-        "icon": "UI",
-        "label": "Design systems, visual design"
+        "icon": "RB",
+        "label": "Robot Studio, Unity Android, Baxter Robot, ABB IRB-120, UFactory Lite 6"
       },
       {
-        "icon": "PM",
-        "label": "Product thinking, stakeholder alignment"
+        "icon": "OS",
+        "label": "Windows, Linux, simulation and robotics workflows"
       },
       {
-        "icon": "AI",
-        "label": "Prompt workflows, automation, tooling"
+        "icon": "LG",
+        "label": "English, Telugu, Hindi"
       }
     ]
   },
   "contact": {
     "heading": "Contact",
-    "subheading": "Let's build something thoughtful.",
-    "email": "hello@example.com",
+    "subheading": "Interested in robotics, controls, or research collaboration? Let’s connect.",
+    "email": "vguthikonda2000@uconn.edu",
     "socials": [
       {
         "label": "GitHub",
-        "url": "https://github.com/"
+        "url": "https://github.com/vguthikonda2000-ship-it"
       },
       {
         "label": "LinkedIn",
-        "url": "https://www.linkedin.com/"
-      },
-      {
-        "label": "X",
-        "url": "https://x.com/"
+        "url": "https://www.linkedin.com/in/vrithik-guthikonda-15858723a"
       }
     ]
   },
   "footer": {
     "prefix": "Made by",
-    "name": "Your Name"
+    "name": "Vrithik Guthikonda"
   }
 }

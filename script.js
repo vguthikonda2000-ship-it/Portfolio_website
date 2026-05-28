@@ -16,6 +16,25 @@ const DRAFT_STORE_NAME = "drafts";
 const DRAFT_RECORD_KEY = "site-content";
 
 function normalizeContent(data) {
+  if (data?.education?.items) {
+    data.education.items = data.education.items.map((item) => {
+      let out = item;
+      if (!out.degree) {
+        const desc = out.description || "";
+        const parts = desc.replace(/\.$/, "").split(", ");
+        const gpa = parts.find((p) => p.startsWith("GPA")) || "";
+        const dates = parts.find((p) => /\d{4}/.test(p) && !p.startsWith("GPA")) || "";
+        const degree = parts.filter((p) => p !== gpa && p !== dates).join(", ");
+        out = { ...out, degree, gpa, dates };
+      }
+      const t = (out.title || "").toLowerCase();
+      const logos = window.EDU_LOGOS || {};
+      if (t.includes("connecticut")) out = { ...out, cardColor: "#002868", logo: logos.uconn || out.logo, logoOnColor: true };
+      else if (t.includes("fairfield")) out = { ...out, cardColor: "#8B0000", logo: logos.fairfield || out.logo, logoOnColor: false };
+      return out;
+    });
+  }
+
   if (data?.projects?.items) {
     data.projects.items = data.projects.items.map((item) => {
       if (Array.isArray(item.links) && item.links.length) {
@@ -37,6 +56,8 @@ function normalizeContent(data) {
     data.publications.items = data.publications.items.map((item) => {
       const normalized = {
         image: "",
+        authors: "",
+        authorNote: "",
         ...item,
       };
 
@@ -198,6 +219,38 @@ function renderParagraphList(containerId, paragraphs) {
   });
 }
 
+function renderAbout(section) {
+  if (!section) return;
+
+  setText("about-heading", section.heading);
+  renderParagraphList("about-paragraphs", section.paragraphs);
+
+  const aboutCopy = document.getElementById("about-paragraphs");
+  if (aboutCopy) {
+    const textOffset = Math.min(140, Math.max(-120, Number(section.textOffset) || 0));
+    aboutCopy.style.setProperty("--about-copy-offset", `${textOffset}px`);
+  }
+
+  const imageFrame = document.getElementById("about-image");
+  if (!imageFrame) return;
+
+  const imageWidth = Number(section.imageWidth) || 420;
+  const clampedImageWidth = Math.min(760, Math.max(220, imageWidth));
+  imageFrame.closest(".about-grid")?.style.setProperty("--about-image-width", `${clampedImageWidth}px`);
+  imageFrame.innerHTML = "";
+  if (!section.image) {
+    imageFrame.classList.add("is-empty");
+    return;
+  }
+
+  imageFrame.classList.remove("is-empty");
+  const image = document.createElement("img");
+  image.src = section.image;
+  image.alt = section.imageAlt || "About image";
+  image.loading = "lazy";
+  imageFrame.appendChild(image);
+}
+
 function renderInfoCards(headingId, containerId, section, defaultLabel) {
   if (!section) return;
 
@@ -209,16 +262,55 @@ function renderInfoCards(headingId, containerId, section, defaultLabel) {
   (section.items || []).forEach((item) => {
     const article = document.createElement("article");
     article.className = "info-card";
+    if (item.cardColor) {
+      article.style.setProperty("--edu-accent", item.cardColor);
+      article.classList.add("edu-card");
+    }
+
+    const titleRow = document.createElement("div");
+    titleRow.className = "edu-title-row";
 
     const title = document.createElement("h3");
     title.textContent = item.title || "";
-    article.appendChild(title);
+    titleRow.appendChild(title);
 
-    const description = document.createElement("p");
-    description.textContent = item.description || "";
-    article.appendChild(description);
+    if (item.logo) {
+      const logoImg = document.createElement("img");
+      logoImg.src = item.logo;
+      logoImg.alt = (item.title || "") + " logo";
+      logoImg.className = "edu-logo";
+      titleRow.appendChild(logoImg);
+    }
 
-    article.appendChild(createCardLink(item, defaultLabel));
+    article.appendChild(titleRow);
+
+    if (item.degree) {
+      const degreeEl = document.createElement("p");
+      degreeEl.className = "edu-degree";
+      degreeEl.textContent = item.degree;
+      article.appendChild(degreeEl);
+
+      const gpaEl = document.createElement("p");
+      gpaEl.className = "edu-meta";
+      gpaEl.textContent = item.gpa || "";
+      article.appendChild(gpaEl);
+
+      const locationEl = document.createElement("p");
+      locationEl.className = "edu-meta";
+      locationEl.textContent = item.linkText || "";
+      article.appendChild(locationEl);
+
+      const datesEl = document.createElement("p");
+      datesEl.className = "edu-meta";
+      datesEl.textContent = item.dates || "";
+      article.appendChild(datesEl);
+    } else {
+      const description = document.createElement("p");
+      description.textContent = item.description || "";
+      article.appendChild(description);
+
+      article.appendChild(createCardLink(item, defaultLabel));
+    }
     container.appendChild(article);
   });
 }
@@ -252,6 +344,29 @@ function renderPublications(section) {
     title.textContent = item.title || "";
     contentWrap.appendChild(title);
 
+    const hasAuthors = Boolean(item.authors);
+    const hasAuthorNote = Boolean(item.authorNote);
+    if (hasAuthors || hasAuthorNote) {
+      const meta = document.createElement("div");
+      meta.className = "publication-meta";
+
+      if (hasAuthors) {
+        const authors = document.createElement("p");
+        authors.className = "publication-authors";
+        authors.textContent = item.authors;
+        meta.appendChild(authors);
+      }
+
+      if (hasAuthorNote) {
+        const authorNote = document.createElement("span");
+        authorNote.className = "publication-author-note";
+        authorNote.textContent = item.authorNote;
+        meta.appendChild(authorNote);
+      }
+
+      contentWrap.appendChild(meta);
+    }
+
     const year = document.createElement("p");
     year.textContent = item.year || "";
     contentWrap.appendChild(year);
@@ -266,7 +381,6 @@ function renderPublications(section) {
     });
     contentWrap.appendChild(linksRow);
 
-    contentWrap.appendChild(createCardLink(item, "View Publication"));
     article.appendChild(contentWrap);
     container.appendChild(article);
   });
@@ -438,8 +552,7 @@ function renderSite(data) {
 
   setLink("resume-link", data.navigation?.resume, "Resume");
   renderHero(data.hero);
-  setText("about-heading", data.about?.heading);
-  renderParagraphList("about-paragraphs", data.about?.paragraphs);
+  renderAbout(data.about);
   renderInfoCards("education-heading", "education-cards", data.education, "Explore");
   renderPublications(data.publications);
   renderInfoCards("experience-heading", "experience-cards", data.experience, "Explore");
