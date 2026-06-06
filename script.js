@@ -37,7 +37,7 @@ function normalizeContent(data) {
 
   if (data?.projects?.items) {
     data.projects.items = data.projects.items.map((item) => {
-      if (Array.isArray(item.links) && item.links.length) {
+      if (Array.isArray(item.links)) {
         return item;
       }
 
@@ -61,7 +61,7 @@ function normalizeContent(data) {
         ...item,
       };
 
-      if (Array.isArray(normalized.links) && normalized.links.length) {
+      if (Array.isArray(normalized.links)) {
         return normalized;
       }
 
